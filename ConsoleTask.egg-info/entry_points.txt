@@ -1,0 +1,2 @@
+[console_scripts]
+ConsoleTask = src.main.:main

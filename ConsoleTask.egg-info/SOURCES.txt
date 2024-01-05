@@ -1,0 +1,12 @@
+setup.py
+ConsoleTask.egg-info/PKG-INFO
+ConsoleTask.egg-info/SOURCES.txt
+ConsoleTask.egg-info/dependency_links.txt
+ConsoleTask.egg-info/entry_points.txt
+ConsoleTask.egg-info/requires.txt
+ConsoleTask.egg-info/top_level.txt
+src/__init__.py
+src/main.py
+src/start_todo/__init__.py
+src/start_todo/todo.py
+src/start_todo/todo_manager.py
