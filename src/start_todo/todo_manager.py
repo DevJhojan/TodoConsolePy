@@ -1,5 +1,6 @@
 #todo_manager.py
 from .models.todo import Todo
+from .models.todo_type import TodoINU, TodoIU
 import json
 class TodoManager:
     def __init__(self):
@@ -20,11 +21,6 @@ class TodoManager:
                 break
             else:
                 print("todo not found")
-    """
-    def add_todo(self, title, description, category, state):
-        todo = Todo(title, description, category, state)
-        self.todos.append(todo)
-    """
     def clear_todos(self):
         self.todos = []
     def save_to_file(self):
@@ -37,9 +33,17 @@ class TodoManager:
         try:
             with open('./src/data/Todos.json', 'r') as file:
                 todo_data = json.load(file)
+
                 for todo in todo_data:
-                    task = Todo(todo.get('title', ''), todo.get('description', ''), todo.get('category',''), todo.get('state',bool))
-                    self.todos.append(task)
+                    if todo.get('category') == 'N':
+                        task = Todo(todo.get('title', ''), todo.get('description', ''), todo.get('category',''), todo.get('state',bool))
+                        self.todos.append(task)
+                    if todo.get('category') == 'IU':
+                        task = TodoIU(todo.get('title', ''), todo.get('description', ''), todo.get('category',''), todo.get('state',bool), todo.get('start_time',str), todo.get('end_time',str))
+                        self.todos.append(task)
+                    if todo.get('category') == 'INU':
+                        task = TodoINU(todo.get('title', ''), todo.get('description', ''), todo.get('category',''), todo.get('state',bool), todo.get('start_time',str))
+                        self.todos.append(task)
                 return True
         except FileNotFoundError:
             print("File not found")
