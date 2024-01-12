@@ -9,7 +9,7 @@ class TodoProm:
     def __init__(self):
         self.manager = TodoManager()
         asyncio.run(self.todo_promp())
-    def help():
+    def help(self):
         print(
             "exit       ->  Exit the program\n"+
             "create     ->  Create 1 new task\n"+
@@ -18,7 +18,7 @@ class TodoProm:
             "show -a    ->  See all tasks\n"+
             "ok - 1     ->  change the state of one task\n"
         )
-    def categories():
+    def categories(self):
         print(
             "N   -> Normal \n"+
             "IU  -> ImportantUrgent\n"
